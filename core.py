@@ -19,7 +19,7 @@ FASCE_DEFAULT = [
 FASCE_PER_FILIALE = {
 
     "CX": [
-        {"da": 0,    "a": 4591,   "prezzo": 3.152},
+        {"da": 0,    "a": 4592,   "prezzo": 3.152},
         {"da": 4592, "a": 18000,  "prezzo": 2.836},
     ],
 
