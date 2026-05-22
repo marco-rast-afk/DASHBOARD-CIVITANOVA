@@ -460,14 +460,29 @@ with tab4:
         lv_ok_g  = sum(v.get("lv_ok",  0) for v in giri_day.values())
         lv_rit_g = sum(v.get("lv_rit", 0) for v in giri_day.values())
         stop_ok  = sum(v.get("stop_ok",0) for v in giri_day.values())
-        prod_tot = sum(v.get("ldv_tot", 0) for v in giri_day.values())
+tot_ldv = lv_ok_g + lv_rit_g
+n_giri = len(giri_day)
+prod_media = tot_ldv / n_giri if n_giri > 0 else 0
 
-        c1, c2, c3, c4, c5 = st.columns(5)
-        with c1: kpi_card("LV Affidate",    fmt_n(lv_af_g),   "#3b82f6")
-        with c2: kpi_card("LV Ok",          fmt_n(lv_ok_g),   "#22c55e")
-        with c3: kpi_card("LV Ritiro",      fmt_n(lv_rit_g),  "#a855f7")
-        with c4: kpi_card("Stop Ok",        fmt_n(stop_ok),   "#14b8a6")
-        with c5: kpi_card("Prod. (LDV)",    fmt_n(prod_tot),  "#f59e0b")
+c1, c2, c3, c4, c5, c6 = st.columns(6)
+
+with c1:
+    kpi_card("LV Affidate", fmt_n(lv_af_g), "#3b82f6")
+
+with c2:
+    kpi_card("LV Ok", fmt_n(lv_ok_g), "#22c55e")
+
+with c3:
+    kpi_card("LV Ritiro", fmt_n(lv_rit_g), "#a855f7")
+
+with c4:
+    kpi_card("Stop Ok", fmt_n(stop_ok), "#14b8a6")
+
+with c5:
+    kpi_card("Volume Totale LDV", fmt_n(tot_ldv), "#94a3b8")
+
+with c6:
+    kpi_card("Prod. Media", f"{prod_media:.1f}", "#f59e0b")
 
         st.markdown("---")
 
