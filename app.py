@@ -484,7 +484,7 @@ with c5:
 with c6:
     kpi_card("Prod. Media", f"{prod_media:.1f}", "#f59e0b")
 
-        st.markdown("---")
+st.markdown("---")
 
         righe_giorno = []
         for g, v in sorted(giri_day.items()):
