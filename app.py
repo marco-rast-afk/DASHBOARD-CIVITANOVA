@@ -480,7 +480,9 @@ with tab4:
         n_giri = len(giri_day)
         prod_media = tot_ldv / n_giri if n_giri > 0 else 0
 
-        c1, c2, c3, c4, c5, c6 = st.columns(6)
+        rdc = (lv_ok_g / lv_af_g * 100) if lv_af_g > 0 else 0
+
+        c1, c2, c3, c4, c5, c6, c7 = st.columns(7)
 
         with c1:
             kpi_card("LV Affidate", fmt_n(lv_af_g), "#3b82f6")
@@ -499,6 +501,9 @@ with tab4:
 
         with c6:
             kpi_card("Prod. Media", f"{prod_media:.1f}", "#f59e0b")
+
+        with c7:
+            kpi_card("RDC", f"{rdc:.1f}%", "#ef4444")
 
         st.markdown("---")
 
