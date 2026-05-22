@@ -455,11 +455,12 @@ with tab4:
                                 format_func=lambda d: d.strftime("%d/%m/%Y"))
         giri_day = giornate_g[date_sel]
 
-        # KPI giornata
-        lv_af_g  = sum(v.get("lv_af",  0) for v in giri_day.values())
-        lv_ok_g  = sum(v.get("lv_ok",  0) for v in giri_day.values())
-        lv_rit_g = sum(v.get("lv_rit", 0) for v in giri_day.values())
-        stop_ok  = sum(v.get("stop_ok",0) for v in giri_day.values())
+# KPI giornata
+lv_af_g  = sum(v.get("lv_af",0) for v in giri_day.values())
+lv_ok_g  = sum(v.get("lv_ok",0) for v in giri_day.values())
+lv_rit_g = sum(v.get("lv_rit",0) for v in giri_day.values())
+stop_ok  = sum(v.get("stop_ok",0) for v in giri_day.values())
+
 tot_ldv = lv_ok_g + lv_rit_g
 n_giri = len(giri_day)
 prod_media = tot_ldv / n_giri if n_giri > 0 else 0
@@ -498,7 +499,6 @@ for g, v in sorted(giri_day.items()):
         "STOP RIT": int(v.get("stop_rit",0)),
         "Produttività (LV OK + RIT)": int(v.get("ldv_tot",0)),
     })
-
         # GRAFICO — Barre orizzontali LV Ok + Rit per giro
         st.markdown("#### LV Ok e LV Ritiro per Giro")
         fig_day = go.Figure()
