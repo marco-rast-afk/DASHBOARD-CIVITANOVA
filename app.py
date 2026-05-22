@@ -486,17 +486,18 @@ with c6:
 
 st.markdown("---")
 
-        righe_giorno = []
-        for g, v in sorted(giri_day.items()):
-            righe_giorno.append({
-                "Giro":                          g,
-                "LV AFF":                        int(v.get("lv_af",  0)),
-                "LV OK":                         int(v.get("lv_ok",  0)),
-                "LV RIT":                        int(v.get("lv_rit", 0)),
-                "STOP OK":                       int(v.get("stop_ok",0)),
-                "STOP RIT":                      int(v.get("stop_rit",0)),
-                "Produttività (LV OK + RIT)":    int(v.get("ldv_tot", 0)),
-            })
+righe_giorno = []
+
+for g, v in sorted(giri_day.items()):
+    righe_giorno.append({
+        "Giro": g,
+        "LV AFF": int(v.get("lv_af",0)),
+        "LV OK": int(v.get("lv_ok",0)),
+        "LV RIT": int(v.get("lv_rit",0)),
+        "STOP OK": int(v.get("stop_ok",0)),
+        "STOP RIT": int(v.get("stop_rit",0)),
+        "Produttività (LV OK + RIT)": int(v.get("ldv_tot",0)),
+    })
 
         # GRAFICO — Barre orizzontali LV Ok + Rit per giro
         st.markdown("#### LV Ok e LV Ritiro per Giro")
