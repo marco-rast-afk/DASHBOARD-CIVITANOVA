@@ -17,17 +17,15 @@ FASCE_DEFAULT = [
 # DIZIONARIO PERSONALIZZATO: 2 scaglioni per filiale.
 # Usa lo stesso identico nome/ID che compare nel file Excel (es. "AP", "ROMA", ecc.)
 FASCE_PER_FILIALE = {
+
+    "CX": [
+        {"da": 0,    "a": 4591,   "prezzo": 3.152},
+        {"da": 4592, "a": 18000,  "prezzo": 2.836},
+    ],
+
     "AP": [
         {"da": 0,    "a": 6142,   "prezzo": 3.190},
         {"da": 6143, "a": 10000,  "prezzo": 3.040},
-    ],
-    "AV": [
-        {"da": 0,     "a": 45000,  "prezzo": 3.300},
-        {"da": 45000, "a": 90000,  "prezzo": 3.150},
-    ],
-    "FG": [
-        {"da": 0,     "a": 55000,  "prezzo": 3.150},
-        {"da": 55000, "a": 100000, "prezzo": 2.950},
     ],
 }
 
